@@ -14,4 +14,5 @@ public interface UserDetailsDao {
   void editUser(User user);
 
   void deleteUser(long id);
+
 }

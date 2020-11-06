@@ -37,4 +37,34 @@ public class UserDetailsServiceImp implements UserDetailsService {
     }
     return builder.build();
   }
+
+  @Override
+  @Transactional
+  public void saveUser(User user) {
+    userDao.saveUser(user);
+  }
+
+  @Override
+  @Transactional
+  public User getUserById(long id) {
+    return userDao.getUserById(id);
+  }
+
+  @Override
+  @Transactional
+  public List<User> getAllUsers() {
+    return userDao.getAllUsers();
+  }
+
+  @Override
+  @Transactional
+  public void editUser(User user) {
+    userDao.editUser(user);
+  }
+
+  @Override
+  @Transactional
+  public void deleteUser(long id) {
+    userDao.deleteUser(id);
+  }
 }

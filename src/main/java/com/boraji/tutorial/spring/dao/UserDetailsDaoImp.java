@@ -16,33 +16,32 @@ public class UserDetailsDaoImp implements UserDetailsDao {
   public User findUserByUsername(String username) {
     return sessionFactory.getCurrentSession().get(User.class, username);
   }
-  @Override
-  @Transactional
-  public void saveUser(User user) {
-    userDao.saveUser(user);
-  }
 
   @Override
-  @Transactional
   public User getUserById(long id) {
-    return userDao.getUserById(id);
+
+    return entityManager.find(User.class, id);
+
   }
 
   @Override
-  @Transactional
   public List<User> getAllUsers() {
-    return userDao.getAllUsers();
+    return entityManager.createQuery("select e from User e", User.class).getResultList();
   }
 
+
   @Override
-  @Transactional
   public void editUser(User user) {
-    userDao.editUser(user);
+    entityManager.merge(user);
   }
 
   @Override
-  @Transactional
   public void deleteUser(long id) {
-    userDao.deleteUser(id);
+    User userToBeDeleted = entityManager.getReference(User.class, id);
+
+    if (userToBeDeleted != null) {
+      entityManager.remove(userToBeDeleted);
+    }
+
   }
 }

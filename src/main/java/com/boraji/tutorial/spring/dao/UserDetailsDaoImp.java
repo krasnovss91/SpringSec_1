@@ -13,6 +13,10 @@ public class UserDetailsDaoImp implements UserDetailsDao {
 
   @Autowired
   private SessionFactory sessionFactory;
+  /*
+      @PersistenceContext
+    EntityManager entityManager;
+   */
 
   @Override
   public User findUserByUsername(String username) {

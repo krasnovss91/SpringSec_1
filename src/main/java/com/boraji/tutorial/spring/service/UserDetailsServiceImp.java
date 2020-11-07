@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.boraji.tutorial.spring.dao.UserDetailsDao;
 import com.boraji.tutorial.spring.model.User;
 
+import java.util.List;
+
 @Service("userDetailsService")
 public class UserDetailsServiceImp implements UserDetailsService {
 
@@ -41,30 +43,30 @@ public class UserDetailsServiceImp implements UserDetailsService {
   @Override
   @Transactional
   public void saveUser(User user) {
-    userDao.saveUser(user);
+    userDetailsDao.saveUser(user);
   }
 
   @Override
   @Transactional
   public User getUserById(long id) {
-    return userDao.getUserById(id);
+    return userDetailsDao.getUserById(id);
   }
 
   @Override
   @Transactional
   public List<User> getAllUsers() {
-    return userDao.getAllUsers();
+    return userDetailsDao.getAllUsers();
   }
 
   @Override
   @Transactional
   public void editUser(User user) {
-    userDao.editUser(user);
+    userDetailsDao.editUser(user);
   }
 
   @Override
   @Transactional
   public void deleteUser(long id) {
-    userDao.deleteUser(id);
+    userDetailsDao.deleteUser(id);
   }
 }

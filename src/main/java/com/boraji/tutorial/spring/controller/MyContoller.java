@@ -2,10 +2,14 @@ package com.boraji.tutorial.spring.controller;
 
 import java.security.Principal;
 
+import com.boraji.tutorial.spring.model.User;
 import com.boraji.tutorial.spring.service.UserDetailsServiceImp;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MyContoller {
@@ -18,7 +22,7 @@ public class MyContoller {
   }
   @GetMapping("/list-of-users")
   public String showUsers(Model model) {
-    model.addAttribute("users", .getAllUsers());
+    model.addAttribute("users", userDetailsService.getAllUsers());
     return "list-of-users";
   }
 

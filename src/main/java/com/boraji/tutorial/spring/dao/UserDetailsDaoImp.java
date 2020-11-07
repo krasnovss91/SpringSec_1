@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import com.boraji.tutorial.spring.model.User;
 
+import java.util.List;
+
 @Repository
 public class UserDetailsDaoImp implements UserDetailsDao {
 

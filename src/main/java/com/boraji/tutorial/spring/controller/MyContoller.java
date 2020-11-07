@@ -35,7 +35,7 @@ public class MyContoller {
 
   @PostMapping("showUserForm/add")
   public String addUser(@ModelAttribute User user) {
-    if (user.getId() == 0) {
+    if (user.getId() == 0) { // переписать с существующими методами
       userDetailsService.saveUser(user);
     } else {
       userDetailsService.editUser(user);

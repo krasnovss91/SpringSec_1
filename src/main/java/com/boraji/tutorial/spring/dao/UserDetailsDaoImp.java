@@ -25,6 +25,11 @@ public class UserDetailsDaoImp implements UserDetailsDao {
   }
 
   @Override
+  public void saveUser(User user) {
+
+  }
+
+  @Override
   public User getUserById(long id) {
 
     return entityManager.find(User.class, id);

@@ -6,17 +6,17 @@ import org.springframework.stereotype.Repository;
 
 import com.boraji.tutorial.spring.model.User;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
 public class UserDetailsDaoImp implements UserDetailsDao {
 
   @Autowired
-  private SessionFactory sessionFactory;
-  /*
-      @PersistenceContext
-    EntityManager entityManager;
-   */
+ // private SessionFactory sessionFactory;
+   //     @PersistenceContext
+    private EntityManager entityManager;
+   
 
   @Override
   public User findUserByUsername(String username) {

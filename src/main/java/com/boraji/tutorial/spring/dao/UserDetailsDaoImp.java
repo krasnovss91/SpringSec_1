@@ -16,11 +16,12 @@ public class UserDetailsDaoImp implements UserDetailsDao {
  // private SessionFactory sessionFactory;
    //     @PersistenceContext
     private EntityManager entityManager;
-   
+
 
   @Override
   public User findUserByUsername(String username) {
-    return sessionFactory.getCurrentSession().get(User.class, username);
+    return  entityManager.find(User.class, username);
+  //  return sessionFactory.getCurrentSession().get(User.class, username);
   }
 
   @Override

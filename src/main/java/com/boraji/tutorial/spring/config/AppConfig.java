@@ -27,7 +27,7 @@ public class AppConfig {
 
   @Autowired
   private Environment env;
-
+//Здесь нужен бин EntityManager
   @Bean
   public LocalSessionFactoryBean getSessionFactory() {
     LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();

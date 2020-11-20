@@ -14,10 +14,18 @@ import com.boraji.tutorial.spring.model.User;
 import java.util.List;
 
 @Service("userDetailsService")
-public class UserDetailsServiceImp implements UserDetailsService {
+public class UserDetailsServiceImp implements UserDetailsService, com.boraji.tutorial.spring.service.UserDetailsService {
 
+  /*
   @Autowired
   private UserDetailsDao userDetailsDao;
+   */
+  private UserDetailsDao userDetailsDao;
+
+  @Autowired
+  public void UserServiceImpl(UserDetailsDao userDetailsDao) {
+    this.userDetailsDao = userDetailsDao;
+  }
 
   @Transactional(readOnly = true)
   @Override

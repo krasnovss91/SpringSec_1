@@ -51,7 +51,10 @@ public class UserDetailsServiceImp implements UserDetailsService, com.boraji.tut
   @Override
   @Transactional
   public boolean findUserByName(String name){
-    
+    if (loadUserByUsername(name) == null)
+      return true;
+    else
+      return false;
   }
   @Override
   @Transactional

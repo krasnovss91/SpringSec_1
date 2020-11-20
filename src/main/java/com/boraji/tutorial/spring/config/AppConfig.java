@@ -11,6 +11,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.orm.jpa.JpaVendorAdapter;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.boraji.tutorial.spring.model.Authorities;
@@ -28,6 +31,21 @@ public class AppConfig {
   @Autowired
   private Environment env;
 //Здесь нужен бин EntityManager
+
+  @Bean
+  public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+    LocalContainerEntityManagerFactoryBean entityManagerFactoryBean
+            = new LocalContainerEntityManagerFactoryBean();
+    entityManagerFactoryBean.setDataSource(dataSource());
+    entityManagerFactoryBean.setPackagesToScan(new String[] { "mvc_hiber.model" });
+
+    JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+    entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
+    entityManagerFactoryBean.setJpaProperties(additionalProperties());
+
+    return entityManagerFactoryBean;
+  }
+  /*
   @Bean
   public LocalSessionFactoryBean getSessionFactory() {
     LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
@@ -56,11 +74,18 @@ public class AppConfig {
     
     return factoryBean;
   }
-
+*/
   @Bean
   public HibernateTransactionManager getTransactionManager() {
     HibernateTransactionManager transactionManager = new HibernateTransactionManager();
     transactionManager.setSessionFactory(getSessionFactory().getObject());
     return transactionManager;
+  }
+  
+  Properties additionalProperties() {
+    Properties properties = new Properties();
+    properties.setProperty("hibernate.hbm2ddl.auto", "update");
+    properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+    return properties;
   }
 }

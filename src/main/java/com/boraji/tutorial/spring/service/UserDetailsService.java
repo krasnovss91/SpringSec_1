@@ -10,4 +10,5 @@ public interface UserDetailsService {
     public List<User> getAllUsers();
     public void editUser(User user);
     public void deleteUser(long id);
+    public boolean findUserByName(String name);
 }

@@ -50,6 +50,11 @@ public class UserDetailsServiceImp implements UserDetailsService, com.boraji.tut
 
   @Override
   @Transactional
+  public boolean findUserByName(String name){
+    
+  }
+  @Override
+  @Transactional
   public void saveUser(User user) {
     userDetailsDao.saveUser(user);
   }

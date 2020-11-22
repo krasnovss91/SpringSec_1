@@ -1,4 +1,4 @@
-package com.boraji.tutorial.spring.model;
+package spring_sec_1.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

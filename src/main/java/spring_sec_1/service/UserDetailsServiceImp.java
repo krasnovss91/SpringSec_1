@@ -1,4 +1,4 @@
-package com.boraji.tutorial.spring.service;
+package spring_sec_1.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User.UserBuilder;
@@ -8,13 +8,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.boraji.tutorial.spring.dao.UserDetailsDao;
-import com.boraji.tutorial.spring.model.User;
+import spring_sec_1.dao.UserDetailsDao;
+import spring_sec_1.model.User;
 
 import java.util.List;
 
 @Service("userDetailsService")
-public class UserDetailsServiceImp implements UserDetailsService, com.boraji.tutorial.spring.service.UserDetailsService {
+public class UserDetailsServiceImp implements UserDetailsService, spring_sec_1.service.UserDetailsService {
 
   /*
   @Autowired

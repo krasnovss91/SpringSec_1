@@ -1,10 +1,9 @@
-package com.boraji.tutorial.spring.dao;
+package spring_sec_1.dao;
 
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.boraji.tutorial.spring.model.User;
+import spring_sec_1.model.User;
 
 import javax.persistence.EntityManager;
 import java.util.List;

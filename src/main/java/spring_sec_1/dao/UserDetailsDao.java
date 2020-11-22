@@ -1,6 +1,6 @@
-package com.boraji.tutorial.spring.dao;
+package spring_sec_1.dao;
 
-import com.boraji.tutorial.spring.model.User;
+import spring_sec_1.model.User;
 
 import java.util.List;
 

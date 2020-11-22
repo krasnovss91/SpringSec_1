@@ -1,9 +1,9 @@
-package com.boraji.tutorial.spring.controller;
+package spring_sec_1.controller;
 
 import java.security.Principal;
 
-import com.boraji.tutorial.spring.model.User;
-import com.boraji.tutorial.spring.service.UserDetailsServiceImp;
+import spring_sec_1.model.User;
+import spring_sec_1.service.UserDetailsServiceImp;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -18,18 +18,18 @@ public class MyContoller {
   @GetMapping("/")
   public String index(Model model, Principal principal) {
     model.addAttribute("message", "You are logged in as " + principal.getName());
-    return "index";
+    return "login";
   }
-  @GetMapping("/list-of-users")
+  @GetMapping("/user")
   public String showUsers(Model model) {
     model.addAttribute("users", userDetailsService.getAllUsers());
-    return "list-of-users";
+    return "user";
   }
 
   @GetMapping("/")
   public String showAll(Model model) {
     model.addAttribute("users", userDetailsService.getAllUsers());
-    return "navigation";
+    return "login";
   }
 
 
@@ -47,7 +47,7 @@ public class MyContoller {
   public String showUserForm(Model model) {
     model.addAttribute("user", new User());
     model.addAttribute("listUsers", userDetailsService.getAllUsers());
-    return "user-form";
+    return "admin";
   }
 
   @GetMapping("showUserForm/edit/{id}")
@@ -56,8 +56,7 @@ public class MyContoller {
     model.addAttribute("user", userDetailsService.getUserById(id));
     model.addAttribute("listUsers", userDetailsService.getAllUsers());
 
-
-    return "edit-user";
+    return "admin";
   }
 
   @PostMapping("showUserForm/edit/showUserForm/edit")
@@ -77,7 +76,7 @@ public class MyContoller {
   @GetMapping("/{id}")
   public String userData(@PathVariable long id, Model model) {
     model.addAttribute("user", this.userDetailsService.getUserById(id));
-    return "list-of-users";
+    return "user";
   }
 
 }

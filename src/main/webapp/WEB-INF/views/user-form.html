@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div align="center">
+    <h1>Edit User</h1>
+
+    <h1>list of users</h1>
+    <div th:if="${!listUsers.isEmpty()}">
+        <table class="tg" border="3">
+            <tr>
+                <td width="80">id</td>
+                <td width="120">name</td>
+                <td width="120">login</td>
+                <td width="120">password</td>
+                <td width="50">edit</td>
+                <td width="50">delete</td>
+            </tr>
+            <th:block th:each="user : ${listUsers}">
+                <tr>
+                    <td th:text="${user.id}"></td>
+                    <td>
+                        <a th:href="@{/showUsewForm/{id}(id=${user.id})}" th:text="${user.name}"></a>
+                    </td>
+                    <td th:text="${user.login}"></td>
+                    <td th:text="${user.password}"></td>
+                    <td>
+                        <a th:href="@{/showUserForm/edit/{id}(id=${user.id})}">edit</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/showUserForm/delete/{id}(id=${user.id})}">delete</a>
+                    </td>
+                </tr>
+            </th:block>
+        </table>
+    </div>
+    <br/>
+    <br/>
+    <div>
+        <h1>add user form</h1>
+        <form class="tg" action="#" th:action="@{showUserForm/add}"  th:object="${user}" method="post">
+            <p><input type="hidden" th:field="*{id}"/></p>
+            <p>name: <input type="text" th:field="*{name}" required/></p>
+            <p>login: <input type="text" th:field="*{login}" required/></p>
+            <p>password: <input type="text" th:field="*{password}" required/></p>
+            <p>
+                <input type="submit" value="Submit" />
+                <input type="reset" value="Reset" />
+            </p>
+        </form>
+    </div>
+    <br/>
+
+    <a th:href="@{/}">Return</a>
+
+</div>
+</body>
+</html>

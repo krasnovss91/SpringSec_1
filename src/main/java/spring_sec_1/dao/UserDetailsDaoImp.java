@@ -6,21 +6,20 @@ import org.springframework.stereotype.Repository;
 import spring_sec_1.model.User;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
 public class UserDetailsDaoImp implements UserDetailsDao {
 
   @Autowired
- // private SessionFactory sessionFactory;
-   //     @PersistenceContext
+  @PersistenceContext
     private EntityManager entityManager;
 
 
   @Override
   public User findUserByUsername(String username) {
     return  entityManager.find(User.class, username);
-  //  return sessionFactory.getCurrentSession().get(User.class, username);
   }
 
   @Override

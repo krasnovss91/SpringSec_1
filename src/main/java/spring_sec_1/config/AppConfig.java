@@ -21,7 +21,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @PropertySource("classpath:db.properties")
-@ComponentScan(value = "com.boraji.tutorial.spring")
+@ComponentScan(value = "spring_sec_1")
 public class AppConfig {
 
   @Autowired
@@ -33,7 +33,7 @@ public class AppConfig {
     LocalContainerEntityManagerFactoryBean entityManagerFactoryBean
             = new LocalContainerEntityManagerFactoryBean();
     entityManagerFactoryBean.setDataSource(dataSource());
-    entityManagerFactoryBean.setPackagesToScan(new String[] { "com.boraji.tutorial.spring.model" });
+    entityManagerFactoryBean.setPackagesToScan(new String[] { "spring_sec_1.model" });
 
     JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
     entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);

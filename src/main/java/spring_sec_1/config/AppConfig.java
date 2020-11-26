@@ -27,7 +27,7 @@ public class AppConfig {
 
   @Autowired
   private Environment environment;
-
+/*
   @Bean
   public LocalSessionFactoryBean sessionFactory() {
     LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
@@ -37,7 +37,7 @@ public class AppConfig {
 
     return sessionFactory;
   }
-
+*/
   @Bean
   public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
     LocalContainerEntityManagerFactoryBean entityManagerFactoryBean

@@ -2,24 +2,36 @@ package spring_sec_1.controller;
 
 import java.security.Principal;
 
+import org.springframework.web.bind.annotation.*;
 import spring_sec_1.model.User;
 import spring_sec_1.service.UserDetailsServiceImp;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MyContoller {
   private UserDetailsServiceImp userDetailsService;
+/*
+  @GetMapping("/")
+  public String showAll(Model model) {
+    model.addAttribute("users", userDetailsService.getAllUsers());
+    return "login";
+  }
 
   @GetMapping("/")
   public String index(Model model, Principal principal) {
     model.addAttribute("message", "You are logged in as " + principal.getName());
     return "login";
   }
+
+
+*/
+@RequestMapping(value = "/", method = RequestMethod.GET)
+public String addPage(@ModelAttribute("login") User user, Model model) {
+  model.addAttribute("user", new User());
+  return "login";
+}
+
   @GetMapping("/user")
   public String showUsers(Model model) {
     model.addAttribute("users", userDetailsService.getAllUsers());

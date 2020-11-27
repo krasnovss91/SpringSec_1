@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ComponentScan(basePackages = { "spring_sec_1" })
 public class WebConfig implements WebMvcConfigurer {
   @Override
-  public void configureViewResolvers(ViewResolverRegistry registry) {
+  public void configureViewResolvers(ViewResolverRegistry registry) {//Стоит поискать проблему здесь
     registry.jsp().prefix("/WEB-INF/views/").suffix(".html");
   }
 

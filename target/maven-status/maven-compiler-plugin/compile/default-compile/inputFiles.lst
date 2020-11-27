@@ -1,0 +1,12 @@
+/home/user/SpringSec_1/src/main/java/spring_sec_1/dao/UserDetailsDao.java
+/home/user/SpringSec_1/src/main/java/spring_sec_1/config/AppConfig.java
+/home/user/SpringSec_1/src/main/java/spring_sec_1/config/SecurityWebApplicationInitializer.java
+/home/user/SpringSec_1/src/main/java/spring_sec_1/config/MvcWebApplicationInitializer.java
+/home/user/SpringSec_1/src/main/java/spring_sec_1/dao/UserDetailsDaoImp.java
+/home/user/SpringSec_1/src/main/java/spring_sec_1/model/User.java
+/home/user/SpringSec_1/src/main/java/spring_sec_1/service/UserDetailsServiceImp.java
+/home/user/SpringSec_1/src/main/java/spring_sec_1/config/WebConfig.java
+/home/user/SpringSec_1/src/main/java/spring_sec_1/controller/MyContoller.java
+/home/user/SpringSec_1/src/main/java/spring_sec_1/service/UserDetailsService.java
+/home/user/SpringSec_1/src/main/java/spring_sec_1/config/WebSecurityConfig.java
+/home/user/SpringSec_1/src/main/java/spring_sec_1/model/Authorities.java

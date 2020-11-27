@@ -18,13 +18,6 @@ public class MyContoller {
     return "login";
   }
 
-  @GetMapping("/")
-  public String index(Model model, Principal principal) {
-    model.addAttribute("message", "You are logged in as " + principal.getName());
-    return "login";
-  }
-
-
 */
 @RequestMapping(value = "/", method = RequestMethod.GET)
 public String addPage(@ModelAttribute("login") User user, Model model) {

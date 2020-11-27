@@ -37,13 +37,7 @@ public String addPage(@ModelAttribute("login") User user, Model model) {
     model.addAttribute("users", userDetailsService.getAllUsers());
     return "user";
   }
-/*
-  @GetMapping("/")
-  public String showAll(Model model) {
-    model.addAttribute("users", userDetailsService.getAllUsers());//возможно этот метод лишний
-    return "login";
-  }
-*/
+
 
   @PostMapping("admin/add")
   public String addUser(@ModelAttribute User user) {
